@@ -1,6 +1,6 @@
 {
-  "name": "react-translate",
-  "version": "4.0.0",
+  "name": "sumeetr-react-translate",
+  "version": "4.0.1",
   "description": "react utilities for simple i18n",
   "main": "./lib/index.js",
   "files": [
@@ -27,9 +27,22 @@
     "start": "babel --stage 0 src --out-dir lib --ignore='__tests__'",
     "test": "babel-node --stage 0 ./scripts/webpack/test"
   },
-  "author": "bloodyowl",
+  "author": "SumeetR",
   "license": "MIT",
   "dependencies": {
     "invariant": "^2.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SumeetR/react-translate.git"
+  },
+  "keywords": [
+    "react",
+    "translate",
+    "i18n"
+  ],
+  "bugs": {
+    "url": "https://github.com/SumeetR/react-translate/issues"
+  },
+  "homepage": "https://github.com/SumeetR/react-translate"
 }
