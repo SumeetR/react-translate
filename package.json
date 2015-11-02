@@ -1,7 +1,7 @@
 {
-  "name": "sumeetr-react-translate",
+  "name": "react-translate-extended",
   "version": "4.0.1",
-  "description": "react utilities for simple i18n",
+  "description": "react utilities for simple i18n with extensions, forked from 'https://github.com/bloodyowl/react-translate'",
   "main": "./lib/index.js",
   "files": [
     "README.md",
