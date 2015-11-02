@@ -2,7 +2,9 @@
 
 > Internationalization for react
 
-[![Build Status](https://travis-ci.org/bloodyowl/react-translate.svg?branch=master)](https://travis-ci.org/bloodyowl/react-translate)
+## Info
+
+This project is a fork of [bloodyowl's](https://github.com/bloodyowl) [react-translate](https://github.com/bloodyowl/react-translate) repository. Its goal is to add features extending the capabilities of react-translate. Currently the only feature added is referencing translations (explained below).
 
 ## Install
 
@@ -135,4 +137,4 @@ your HTML page, or any other way you find adequate.
 
 ## Usage example
 
-You can check the [example repository](https://github.com/bloodyowl/react-translate-example)
+You can checkout bloodyowl's example [here](https://github.com/bloodyowl/react-translate-example)
