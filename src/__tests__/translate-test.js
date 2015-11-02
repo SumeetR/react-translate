@@ -30,6 +30,27 @@ tape("translate passes `t` function", (test) => {
   )
 })
 
+tape("`t` should detect @: reference in key and return correct value", (test) => {
+  const Dummy = ({ t }) => {
+    test.equal(typeof t, "function")
+    test.deepEqual(t("foo"), "bar")
+    test.end()
+    return <div />
+  }
+  const WrappedDummy = translate("Dummy")(Dummy)
+  renderIntoDocument(
+    <TranslatorProvider
+      translations={{
+        locale: "en",
+        "Dummy": {"foo": "@:Trummy.foo"},
+        "Trummy": {"foo": "bar"}
+      }}
+    >
+      <WrappedDummy />
+    </TranslatorProvider>
+  )
+})
+
 tape("`t` returns key if component is not specified", (test) => {
   const Dummy = ({ t }) => {
     test.equal(typeof t, "function")

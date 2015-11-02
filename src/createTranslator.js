@@ -10,6 +10,12 @@ const createTranslator = (keys) => {
     const componentKeys = keys[componentName]
     return (key, params) => {
       let translation = componentKeys[key]
+      // Check if translation is a reference and find the reference
+      if (translation !== undefined && translation.indexOf("@:") === 0) {
+        // Remove @: and split string by '.' to find reference and find translation
+        const reference = translation.replace("@:", '').split('.');
+        translation = keys[reference[0]][reference[1]];
+      }
       if (translation === undefined) {
         return `${componentName}.${key}`
       }
