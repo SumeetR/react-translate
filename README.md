@@ -108,6 +108,23 @@ const translations = {
   },
 }
 ```
+## Creating a reference in the `translations` object
+
+To create a reference in the `translations` object that returns another translation's value, simply include `@:` and the translation key to be referenced:
+
+```js
+const translations = {
+  locale: "es",
+  FirstComponent: {
+    FIRST_KEY: "Hola Mundo!"
+  },
+  SecondComponent: {
+    SECOND_KEY: "@:FirstComponent.FIRST_KEY"
+  }
+}
+```
+
+Hence `t('SECOND_KEY)'`, when used in `SecondComponent`, will return "Hola Mundo!"
 
 ## How do I load translations ?
 
