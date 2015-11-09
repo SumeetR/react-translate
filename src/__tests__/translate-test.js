@@ -51,6 +51,48 @@ tape("`t` should detect @: reference in key and return correct value", (test) =>
   )
 })
 
+tape("`t` should detect @: reference in key and return key if component not found", (test) => {
+  const Dummy = ({ t }) => {
+    test.equal(typeof t, "function")
+    test.deepEqual(t("foo"), "Dummy.foo")
+    test.end()
+    return <div />
+  }
+  const WrappedDummy = translate("Dummy")(Dummy)
+  renderIntoDocument(
+    <TranslatorProvider
+      translations={{
+        locale: "en",
+        "Dummy": {"foo": "@:Wrongy.foo"},
+        "Trummy": {"foo": "bar"}
+      }}
+    >
+      <WrappedDummy />
+    </TranslatorProvider>
+  )
+})
+
+tape("`t` should detect @: reference in key and return key if key not found", (test) => {
+  const Dummy = ({ t }) => {
+    test.equal(typeof t, "function")
+    test.deepEqual(t("foo"), "Dummy.foo")
+    test.end()
+    return <div />
+  }
+  const WrappedDummy = translate("Dummy")(Dummy)
+  renderIntoDocument(
+    <TranslatorProvider
+      translations={{
+        locale: "en",
+        "Dummy": {"foo": "@:Trummy.bar"},
+        "Trummy": {"foo": "bar"}
+      }}
+    >
+      <WrappedDummy />
+    </TranslatorProvider>
+  )
+})
+
 tape("`t` returns key if component is not specified", (test) => {
   const Dummy = ({ t }) => {
     test.equal(typeof t, "function")
