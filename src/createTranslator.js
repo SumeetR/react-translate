@@ -1,14 +1,6 @@
 import render from "./render"
 import getPluralType from "./getPluralType"
 
-const getValue = (componentName, keys) => {
-  if (!keys.hasOwnProperty(componentName)) {
-    return (key) => `${componentName}.${key}`
-  } else {
-
-  }
-}
-
 const createTranslator = (keys) => {
   const pluralType = getPluralType(keys.locale)
   return (componentName) => {
