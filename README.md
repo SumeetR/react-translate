@@ -6,7 +6,9 @@
 
 ## Info
 
-This project is a fork of [bloodyowl's](https://github.com/bloodyowl) [react-translate](https://github.com/bloodyowl/react-translate) repository. Its goal is to add features extending the capabilities of react-translate. Currently the only feature added is referencing translations (explained below).
+This project is a fork of [bloodyowl's](https://github.com/bloodyowl) [react-translate](https://github.com/bloodyowl/react-translate) repository. Its goal is to add features extending the capabilities of react-translate. Currently the features added are:
+* Referencing Translation
+* Expose Child Component
 
 ## Install
 
@@ -129,6 +131,14 @@ const translations = {
 ```
 
 Hence `t('SECOND_KEY)'`, when used in `SecondComponent`, will return "Hola Mundo!"
+
+### Access Original Component
+
+When using the translate decorator, the Comoponent will be wrapped with <Translator>. To obtain the original Component use the following:
+
+```js
+component.ChildComponent
+```
 
 ## How do I load translations ?
 

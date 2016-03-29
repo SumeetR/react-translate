@@ -3,8 +3,8 @@ import React, { Component, PropTypes } from "react"
 export default function translate(displayName, shouldComponentUpdate) {
   let t
   let previousLocale = null
-  return (ChildComponent) => {
-    return class Translator extends Component {
+  return (ChildComponent) => { 
+    class Translator extends Component {
 
       static contextTypes = {
         translator: PropTypes.func.isRequired,
@@ -24,5 +24,7 @@ export default function translate(displayName, shouldComponentUpdate) {
         )
       }
     }
+    Translator.ChildComponent = ChildComponent;
+    return Translator
   }
 }
