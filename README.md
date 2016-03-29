@@ -132,7 +132,7 @@ const translations = {
 
 Hence `t('SECOND_KEY)'`, when used in `SecondComponent`, will return "Hola Mundo!"
 
-### Access Original Component
+## Access Original Component
 
 When using the translate decorator, the Comoponent will be wrapped with <Translator>. To obtain the original Component use the following:
 
