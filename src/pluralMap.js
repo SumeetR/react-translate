@@ -1,3 +1,4 @@
+const ARABIC = "arabic"
 const CHINESE = "chinese"
 const GERMAN = "german"
 const FRENCH = "french"
@@ -7,6 +8,7 @@ const POLISH = "polish"
 const ICELANDIC = "icelandic"
 
 const pluralMap = {
+  ar: ARABIC,
   id: CHINESE,
   ja: CHINESE,
   ko: CHINESE,

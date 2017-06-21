@@ -1,4 +1,7 @@
 const pluralTypes = {
+  arabic(n) {
+    return n > 1 ? 1 : 0;
+  },
   chinese(n) {
     return 0
   },

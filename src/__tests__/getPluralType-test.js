@@ -8,6 +8,9 @@ tape("getPluralType", (test) => {
   test.equal(getPluralType("en")(0), 1)
   test.equal(getPluralType("en")(1), 0)
   test.equal(getPluralType("en")(2), 1)
+  test.equal(getPluralType("ar")(0), 0)
+  test.equal(getPluralType("ar")(1), 0)
+  test.equal(getPluralType("ar")(2), 1)
   test.end()
 })
 
